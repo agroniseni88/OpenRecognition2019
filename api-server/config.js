@@ -1,5 +1,5 @@
 process.env.MONGODB_URL = "mongodb+srv://Prasamsha12:devil12@cluster0-eshlg.mongodb.net/test?retryWrites=true&w=majority";
-process.env.PORT = 3000;
+process.env.PORT = 5000;
 
 console.log(`
 configging -->

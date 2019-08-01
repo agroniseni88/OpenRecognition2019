@@ -1,7 +1,32 @@
 [
     {
-        "__v": 0,
-        "_id": "5d18dfe9ab75a5311958edcd",
-        "first_name": "ttt"
+        "_id": "5d3c2aec003cb3219c73b0f6",
+        "first_name": "Praa",
+        "last_name": "srma",
+        "username": "deil13",
+        "email": "pra@yhoo.com",
+        "password": "cdingisfun",
+        "join_date": "2019-07-27T10:43:56.599Z",
+        "__v": 0
+    },
+    {
+        "_id": "5d3c2aec003cb3219c73b0f6",
+        "first_name": "Pra",
+        "last_name": "sra",
+        "username": "deil3",
+        "email": "pra@yhoo.com",
+        "password": "cdingisfun",
+        "join_date": "2019-07-27T10:43:56.599Z",
+        "__v": 0
+    },
+    {
+        "_id": "5d3c2aec003cb3219c73b0f6",
+        "first_name": "raa",
+        "last_name": "sra",
+        "username": "del13",
+        "email": "pra@yhoo.com",
+        "password": "cdingisfun",
+        "join_date": "2019-07-27T10:43:56.599Z",
+        "__v": 0
     }
 ]

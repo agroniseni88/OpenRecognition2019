@@ -1,5 +1,27 @@
 body{
-  background-image: url("world.jpg")
+  /* background-image: url("world.jpg"); */
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-size: cover;
+}
+
+
+.search-border{
+  border-radius: 50px;
+  padding-left: 25px;
+  margin-left: 445px;
+}
+
+h1{
+  /* text-align: center; */
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  padding-left:14px;
+  width: 600px;
+  font-style: normal;
+  color: greenyellow;
+
 }
 .box-controller {
   visibility: visible;
@@ -27,7 +49,7 @@ body{
   height: 100%;
   line-height: 2;
   cursor: pointer;
-  padding-right: 2px;
+  padding-right: 100px;
   
 }
 .controller:hover,
@@ -82,6 +104,7 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-top: 25px;
 }
 
 .input-group {
@@ -95,20 +118,32 @@ body{
 .login-label {
   font-family: Oxygen, sans-serif;
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 500;
   padding-left: 5px;
   
 }
+.box-header{
+  text-align: center;
+  font-weight: 500;
+  padding: 5px;
+  color: grey;
+  margin-bottom: 17px;
+  margin-left: 35px;
+  margin-right: 35px;
+  font-family: Ozxgen, sans-serif;
+  font-size: 22px;
+  border-bottom: 2px solid blue;
+}
 label{
   font-weight: bold;
-  columns: white;
+  color: grey;
 }
 
 
 .login-input {
   height: 2.1em;
   border-radius: 3px;
-  border: 1px solid $blue_theme;
+  border: 1px solid blue;
   transition: border 0.4s ease-out;
   padding: 13px;
   font-family: Oxygen, sans-serif;
@@ -150,16 +185,24 @@ label{
   font-weight: 900;
 }
 
+/* button square */
+button{
+  text-align: center;
+  padding-left: 200px;
+  width: 351px;
+
+}
+/* login button */
 .login-btn:hover,
 .login-btn:focus {
   background-color: #417cef;
   color: white;
 }
 
-.danger-error {
+/* .danger-error {
   color: #e74c3c;
   font-size: 16px;
-}
+} */
 
 
 .password-state {
@@ -188,4 +231,7 @@ label{
 
 .show {
   visibility: visible;
+}
+.box-signup{
+  padding-bottom: 132px;
 }

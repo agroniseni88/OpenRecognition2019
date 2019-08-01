@@ -44,7 +44,7 @@ class SignUp extends React.Component{
             </div>
 
 
-            <div className="box header">
+            <div className="box-header">
               Sign up
             </div>        
           <div className="box">
@@ -111,9 +111,9 @@ class SignUp extends React.Component{
               </div> 
       
               <button 
-                  type="button" 
+                  type="button" className="login-btn"
                   onClick={(e)=>this.submitregister(e)}
-                   className="login-btn">Sign up</button>
+                   >Sign up</button>
             
           </div> 
       
