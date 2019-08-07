@@ -4,36 +4,36 @@ const profile_schema = mongoose.Schema(
   {
     first_name: {
       type: String,
-      required: true
+      // required: true
     },
     last_name: {
       type: String,
-      required: true
+      // required: true
     },
     email: {
       type: String,
-      required: true
+      // required: true
     },
     username: {
       type: String,
-      required: true,
+      // required: true,
       unique: true
     },
     password: {
       type: String,
-      required: true
+      // required: true
     },
-    active:{
-      type: Boolean
-    },
-    photo:{
-      type:String,
-      required: false
-    },
-    join_date: {
-      type: Date,
-      default: Date.now
-    }
+    // active:{
+    //   type: Boolean
+    // },
+    // photo:{
+    //   type:String,
+    //   required: false
+    // },
+    // join_date: {
+    //   type: Date,
+    //   default: Date.now
+    // }
   }
 );
 

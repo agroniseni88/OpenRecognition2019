@@ -35,8 +35,25 @@ controller.get_all = (_req, res) => {
 
 controller.get_add = (req, res) => {
   console.log("-- GET /add --");
-  res.send("Sucessfully created");
-}
+  // res.send("Sucessfully created");
+  
+    const new_username = req.body.username;
+  const new_password = req.body.password;
+  
+  profiles.findOne(({new_username: new_username, new_password: new_password}, function(err, user){
+  
+    if(err){
+      console.log(err);
+      return res.status(500).send();
+  
+    }
+    if(!user){
+      return res.status(404).send();
+    }
+    return res.status(200).send();
+  }))
+  }
+  
 
 controller.post_add = (req, res) => {
   console.log("-- POST /add --");

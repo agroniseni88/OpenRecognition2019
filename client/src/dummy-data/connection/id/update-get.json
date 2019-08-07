@@ -1,1 +1,18 @@
-"send a post request to this address with a 'title' property in the body"
+{
+    "n": 1,
+    "nModified": 1,
+    "opTime": {
+        "ts": "6720624022867935233",
+        "t": 3
+    },
+    "electionId": "7fffffff0000000000000003",
+    "ok": 1,
+    "operationTime": "6720624022867935233",
+    "$clusterTime": {
+        "clusterTime": "6720624022867935233",
+        "signature": {
+            "hash": "M9PiZW1LXIhK8eW4RT9c0D2tprg=",
+            "keyId": "6711469050968408065"
+        }
+    }
+}

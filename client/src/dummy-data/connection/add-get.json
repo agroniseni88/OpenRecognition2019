@@ -1,1 +1,1 @@
-"put a userid and all in the body and send a post request to this address: { user1_id: 'ObjectId' }........ you'll get back the  user's entry"
+"hi, you're at the connections api"
