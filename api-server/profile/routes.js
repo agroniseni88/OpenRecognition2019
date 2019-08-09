@@ -15,6 +15,7 @@ router.get("", controller.welcome);
 
 router.get("/all", controller.get_all);
 
+
 /* ------------------- CREATE -------------------*/
 // GET  "/add"                => instructions 
 // POST "/add"                => Create new profile
@@ -28,6 +29,7 @@ router.post("/add", controller.post_add);
 
 router.get("/:id", controller.get_id);
 
+router.get("/:username/:password", controller.get_user)
 /* ------------------- UPDATE -------------------*/
 // GET  "/:id/update"     => instructions 
 // POST "/:id/update"     => update profile with id...

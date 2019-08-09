@@ -5,8 +5,8 @@ class SignUp extends React.Component{
     constructor(props){
       super(props);
       this.state={
-        firstname: "ddfdff",
-        lastname: "",
+        first_name: "",
+        last_name: "",
         email: "",
         username: "",
         password: ""
@@ -24,25 +24,23 @@ class SignUp extends React.Component{
     
     submitregister= (e )=>{
       e.preventDefault();
-      fetch("http://localhost:5000/api/profile/add",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" }
+      const { first_name, last_name, email, username, password } = this.state;
+      fetch('http://localhost:5000/api/profile/add', {
+         method: 'POST',
+         body: JSON.stringify({
+         first_name, 
+         last_name,
+         email,
+         username,
+         password
+         }),
+      headers: { 'Accept': 'application/json, text/plain, */*',
+     'Content-Type': 'application/json'}
       })
-      .then(function(res){ console.log(res) })
-      .catch(function(res){ console.log(res) })
-            
-    this.setState({
-      firstname: "",
-        lastname: "",
-        email: "",
-        username: "",
-        password: ""
-
-    })
-        console.log(this);
-  
-    }
+     .then( res => res.json())
+     .then( res => console.log(res)); 
+     }  
+    
     
     render(){
       return (
@@ -59,25 +57,25 @@ class SignUp extends React.Component{
           
               <div className="input-group">
       
-                    <label htmlFor="firstname">Firstname</label>
+                    <label htmlFor="first_name">Firstname</label>
                     <input 
                         type="text" 
                         className="login-input"
-                        name="firstname" 
+                        name="first_name" 
                         placeholder="firstname"
-                        value={this.state.firstName}
+                        value={this.state.first_name}
                         onChange={e => this.Change(e)}/>
               
               </div> 
               <div className="input-group">
       
-                    <label htmlFor="lastname">Lastname</label>
+                    <label htmlFor="last_name">Lastname</label>
                     <input 
                         type="text" 
                         className="login-input" 
-                        name="lastname"
+                        name="last_name"
                         placeholder="lastname"
-                        value={this.state.lastname}
+                        value={this.state.last_name}
                         onChange={e => this.Change(e)}/>
 
               </div> 
@@ -118,7 +116,7 @@ class SignUp extends React.Component{
               </div> 
       
               <button 
-                  type="button" className="login-btn"
+                  type="submit" className="login-btn"
                   onClick={(e)=>this.submitregister(e)}
                    >Sign up</button>
             

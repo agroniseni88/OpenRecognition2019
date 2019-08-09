@@ -35,12 +35,12 @@ controller.get_all = (_req, res) => {
 
 controller.get_add = (req, res) => {
   console.log("-- GET /add --");
-  // res.send("Sucessfully created");
   
-    const new_username = req.body.username;
-  const new_password = req.body.password;
   
-  profiles.findOne(({new_username: new_username, new_password: new_password}, function(err, user){
+  const username = req.body.username;
+  const password = req.body.password;
+  
+  profiles.find(({username: username}, {password: password}, function(err, user){
   
     if(err){
       console.log(err);
@@ -59,19 +59,17 @@ controller.post_add = (req, res) => {
   console.log("-- POST /add --");
   const new_first_name = req.body.first_name;
   const new_last_name = req.body.last_name;
-  const new_username = req.body.username;
   const new_email = req.body.email;
+  const new_username = req.body.username;
   const new_password = req.body.password;
-  const new_active = req.body.active;
-  const new_photo = req.body.photo;
+ 
   const new_profile = {
     first_name: new_first_name,
     last_name: new_last_name,
-    username: new_username,
     email: new_email,
+    username: new_username,
     password: new_password,
-    active: new_active,
-    photo: new_photo
+  
   };
   profiles.create(new_profile)
     // modify the next line based on your project's needs
@@ -128,21 +126,18 @@ controller.post_id_update = (req, res) => {
     _id: profile_id
   };
   const first_name = req.body.first_name;
+  const last_name = req.body.last_name;
+  const email = req.body.email;
   const username = req.body.username;
   const password = req.body.password;
-  const email = req.body.email;
-  const last_name = req.body.last_name;
-  const active = req.body.active;
-  const photo = req.body.photo;
 
   const name_object = {
     first_name: first_name,
     last_name: last_name,
-    username: username,
     email: email,
+    username: username,    
     password: password,
-    active: active,
-    photo: photo
+   
   };
   profiles.update(id_object, name_object)
     // modify the next line based on your project's needs
@@ -160,6 +155,22 @@ controller.post_id_update = (req, res) => {
 // GET  "/:id/delete"     => instructions
 // POST "/:id/delete"     => delete profiles with id...
 
+controller.get_user=(req, res)=>{
+  const username=req.params.username;
+  const password=req.params.password;
+
+
+  profiles.find( {username: username}, {password: password}
+
+  )
+
+
+
+  .then((db_response) => {
+    res.send(db_response)
+  })
+
+}
 
 controller.get_id_delete = (req, res) => {
   const profile_id = req.params.id;

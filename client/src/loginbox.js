@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link} from "react-router-dom"
+
+
 
 import './App.css';
 
@@ -9,36 +10,33 @@ class LoginBox extends React.Component{
     constructor(props){
       super(props);
       this.state={
-        new_username: "",
-        new_password: ""
+        username: "",
+        password: ""
       };
   
     }
    
         submitlogin(e){
           e.preventDefault();
-          const { history } = this.props;
-          fetch(`http://localhost:5000/api/profile/${this.state.new_username}/${this.state.new_password}`,
-      { method: "GET",
-        headers: { "Content-Type": "application/json" }
+          
+          const { username, password } = this.state;
+      fetch('http://localhost:5000/api/profile/username/password', {
+         method: 'GET',
+         Window: JSON.stringify({
+         
+         username,
+         password
+         }
+         ),
+      headers: { 'Accept': 'application/json, text/plain, */*',
+     'Content-Type': 'application/json'}
+     
       })
-      .then(res => {
-        if (res.status === 200) {
-          res.json().then(data => {
-            const profiles = data;
-            localStorage.setItem("new_username", `${profiles[0].new_username}`);
-            // history.push(`/profile/${profiles[0].id}`);
-            // history.push(`/profile/${profiles[0].login}`);
-          });
-        } else {
-          this.setState({
-            // [e.target.name] : e.target.value
-            });
-            console.log(this.state);
-        }
-      })
-      .catch(err => console.log("Error:", err));
-      };
+      
+     .then( res => res.json())
+     .then( res => console.log(res)); 
+     }  
+    
             
 
             // get and fetch data from vbachend post https://googlechrome.github.io/samples/fetch-api/fetch-post.html
